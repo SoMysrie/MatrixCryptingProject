@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1418891921 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\main.c
+	<stdio.h>
+	<stdlib.h>
+
