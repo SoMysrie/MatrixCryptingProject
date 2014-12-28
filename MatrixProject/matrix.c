@@ -4,7 +4,7 @@ void displayMatrix(int tab[4][4])
 {
     int i, j;
 
-    printf("\n\nAffichage de la matrice:\n\n");
+    printf("\n\nDisplay the matrix:\n\n");
 
     for(i=0; i<4; i++)
     {
@@ -18,8 +18,8 @@ void askMatrix(int tab[4][4])
 {
     int i, j;
 
-    printf("\n\nEntrez votre matrice binaire:\n\n");
-    printf("(Entrez un 0 ou un 1)\n\n");
+    printf("\n\nEnter your matrix:\n\n");
+    printf("(0 || 1)\n\n");
 
     for(j=0; j<4; j++)
     {
@@ -29,7 +29,7 @@ void askMatrix(int tab[4][4])
             {
                 scanf("%d", &tab[i][j]);
                 if (tab[i][j] != 0 && tab[i][j] != 1)
-                    printf("Erreur! \n");
+                    printf("nError! \n");
             }while(tab[i][j]!=0 && tab[i][j]!=1);
         }
         printf("\n");
@@ -56,13 +56,13 @@ int verifMatrixNull(int tab[4][4])
 
         if (cpt0 == 4)
         {
-            printf("Erreur!\nLa matrice entree est incorrecte.\n\n");
+            printf("\n\nError!\nThere is at least one zero column. \n\n");
             resultat = 0;
             return resultat;
         }
         else if (cpt1 < 2)
         {
-            printf("Erreur!\nLa matrice entree est incorrecte.\n\n");
+            printf("\n\nError!\nThere is at least one identical to that column of the identity matrix.\n\n");
             resultat = 0;
             return resultat;
         }
@@ -101,7 +101,7 @@ int verifMatrixDuplicate(int tab[4][4])
     if (cpt1 == 4 || cpt2 == 4 || cpt3 == 4 || cpt4 == 4 || cpt5 == 4 || cpt6 == 4)
     {
         resultat = 0;
-        printf("Erreur!\nLa matrice entree est incorrecte.\n\n");
+        printf("\n\nError!\nThere are at least two identical columns.\n\n");
     }
 
     return resultat;
@@ -111,21 +111,19 @@ void displayGenerator(int tab1[4][4], int tab2 [4][4], int tab3[4][8])
 {
     int i, j;
 
-    //ajout de tab1 dans tab3
     for(i=0; i<4; i++)
     {
         for(j=0; j<4; j++)
             tab3[i][j] = tab1[i][j];
     }
 
-    //ajout de tab2 à la suite de tab1 dans tab3
     for(i=0; i<4; i++)
     {
         for(j=4; j<8; j++)
             tab3[i][j] = tab2[i][j-4];
     }
 
-    printf("\n\nAffichage de la matrice generatrice:\n\n");
+    printf("\n\nDisplay the generator Matrix:\n\n");
 
     for(i=0; i<4; i++)
     {

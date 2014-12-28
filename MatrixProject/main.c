@@ -11,62 +11,48 @@ int main(int argc, char **argv)
     };
     int tabMatrixAn[4][4];
     int tabGenerator[4][8];
-    int answerCode, answerFile;
+    int answerCode, answerAgain;
     long lengthFile;
 
-    //boucle au moins une fois sur la matrice entrée
     do
     {
-        //demande de la matrice
         askMatrix(tabMatrixAn);
     }while(verifMatrixNull(tabMatrixAn) == 0 || verifMatrixDuplicate(tabMatrixAn) == 0);
 
-    //affichage de la matrice par défaut
     displayMatrix(tabMatrixId);
 
-    //affichage de la matrice entrée
     displayMatrix(tabMatrixAn);
 
-    //affichage de la matrice génératrice
     displayGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
 
-    //choisir le fichier
-    do
-    {
-        choiceFile(&answerFile);
-        switch (answerFile)
-        {
-            case 1:
-                lengthFile = sizeFileTxt();
-                break;
-            case 2:
-                lengthFile = sizeFilePic();
-                break;
-            case 3:
-                lengthFile = sizeFileMusic();
-            case 4:
-                lengthFile = sizeFileVideo();
-            default:
-                printf("\n\nError!\n\n");
-        }
-    }while(answerFile<1 || answerFile>4)
+    lengthFile = sizeFile();
 
-
-
-
-    //choisir de coder ou décoder
     do
     {
         choiceMatrix(&answerCode);
-    }while(answerCode !=0 && answerCode != 1);
+    }while(answerCode !=1 && answerCode != 2);
 
 
-    //calcul de la matrice generatrice
+
+/*
     if (answerCode == 0)
         calculInGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
     else
         calculOutGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
 
+
+/*
+    do
+    {
+        choiceAgain(&answerAgain);
+        if (answerAgain == 1)
+        {
+
+        }
+        else
+            break;
+    }while(answerAgain != 1 && answerAgain != 2);
+*/
 
     system("PAUSE");
 
