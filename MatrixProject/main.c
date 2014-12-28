@@ -11,7 +11,8 @@ int main(int argc, char **argv)
     };
     int tabMatrixAn[4][4];
     int tabGenerator[4][8];
-    int answer;
+    int answerCode, answerFile;
+    long lengthFile;
 
     //boucle au moins une fois sur la matrice entrée
     do
@@ -29,26 +30,43 @@ int main(int argc, char **argv)
     //affichage de la matrice génératrice
     displayGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
 
+    //choisir le fichier
+    do
+    {
+        choiceFile(&answerFile);
+        switch (answerFile)
+        {
+            case 1:
+                lengthFile = sizeFileTxt();
+                break;
+            case 2:
+                lengthFile = sizeFilePic();
+                break;
+            case 3:
+                lengthFile = sizeFileMusic();
+            case 4:
+                lengthFile = sizeFileVideo();
+            default:
+                printf("\n\nError!\n\n");
+        }
+    }while(answerFile<1 || answerFile>4)
+
+
+
+
     //choisir de coder ou décoder
     do
     {
-        choiceMatrix(&answer);
-    }while(answer !=0 && answer != 1);
+        choiceMatrix(&answerCode);
+    }while(answerCode !=0 && answerCode != 1);
+
 
     //calcul de la matrice generatrice
-    if (answer == 0)
+    if (answerCode == 0)
         calculInGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
     else
         calculOutGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
 
-    //selection d'un fichier
-    //printf("\n\nVeuillez choisir un fichier:\n\n");
-
-    //chemin de l'enregistrement du fichier
-    //printf("\n\nVeuillez choisir ou enregistrer:\n\n");
-
-    //nouveau nom du fichier
-    //printf("\n\nVeuillez choisir le nouveau nom du fichier:\n\n");
 
     system("PAUSE");
 
