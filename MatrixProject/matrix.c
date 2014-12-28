@@ -4,6 +4,8 @@ void displayMatrix(int tab[4][4])
 {
     int i, j;
 
+    printf("\n\nAffichage de la matrice:\n\n");
+
     for(i=0; i<4; i++)
     {
         for(j=0; j<4; j++)
@@ -26,7 +28,7 @@ void askMatrix(int tab[4][4])
             do
             {
                 scanf("%d", &tab[i][j]);
-                if (tab[i][j] != 1 && tab[i][j] != 0)
+                if (tab[i][j] != 0 && tab[i][j] != 1)
                     printf("Erreur! \n");
             }while(tab[i][j]!=0 && tab[i][j]!=1);
         }
@@ -54,18 +56,16 @@ int verifMatrixNull(int tab[4][4])
 
         if (cpt0 == 4)
         {
-            printf("Erreur!\n La matrice entree est incorrect.\n\n");
+            printf("Erreur!\n La matrice entree est incorrecte.\n\n");
             resultat = 0;
             return resultat;
         }
         else if (cpt1 < 2)
         {
-            printf("Erreur!\n La matrice entree est incorrect.\n\n");
+            printf("Erreur!\n La matrice entree est incorrecte.\n\n");
             resultat = 0;
             return resultat;
         }
-        else
-            resultat = 1;
     }
 
     return resultat;
@@ -73,36 +73,35 @@ int verifMatrixNull(int tab[4][4])
 
 int verifMatrixDuplicate(int tab[4][4])
 {
-    int i, j, cpt0, cpt1;
-    int resultat = 1;
+    int i, resultat = 1;
+    int cpt1 = 0, cpt2 = 0, cpt3 = 0, cpt4 = 0, cpt5 = 0, cpt6 = 0;
+    int tab_save0[4], tab_save1[4], tab_save2[4], tab_save3[4];
 
-    for(j=0; j<4; j++)
+    for(i=0; i<4; i++)
     {
-        cpt0 = 0;
-        cpt1 = 0;
+        tab_save0[i] = tab[i][0];
+        tab_save1[i] = tab[i][1];
+        tab_save2[i] = tab[i][2];
+        tab_save3[i] = tab[i][3];
 
-        for(i=0; i<4; i++)
-        {
-            if (tab[i][j] == 1)
-                cpt1++;
-            else if (tab[i][j] == 0)
-                cpt0++;
-        }
+        if (tab_save0[i] == tab_save1[i])
+            cpt1 ++;
+        else if (tab_save0[i] == tab_save2[i])
+            cpt2 ++;
+        else if (tab_save0[i] == tab_save3[i])
+            cpt3 ++;
+        else if (tab_save1[i] == tab_save2[i])
+            cpt4 ++;
+        else if (tab_save1[i] == tab_save3[i])
+            cpt5 ++;
+        else if (tab_save2[i] == tab_save3[i])
+            cpt6 ++;
+    }
 
-        if (cpt0 == 4)
-        {
-            printf("Erreur!\n La matrice entree est incorrect.\n\n");
-            resultat = 0;
-            return resultat;
-        }
-        else if (cpt1 < 2)
-        {
-            printf("Erreur!\n La matrice entree est incorrect.\n\n");
-            resultat = 0;
-            return resultat;
-        }
-        else
-            resultat = 1;
+    if (cpt1 == 4 || cpt2 == 4 || cpt3 == 4 || cpt4 == 4 || cpt5 == 4 || cpt6 == 4)
+    {
+        resultat = 0;
+        printf("Erreur!\n La matrice entree est incorrecte.\n\n");
     }
 
     return resultat;
@@ -126,15 +125,12 @@ void displayGenerator(int tab1[4][4], int tab2 [4][4], int tab3[4][8])
             tab3[i][j] = tab2[i][j-4];
     }
 
+    printf("\n\nAffichage de la matrice generatrice:\n\n");
+
     for(i=0; i<4; i++)
     {
         for(j=0; j<8; j++)
             printf("%d ", tab3[i][j]);
         printf("\n");
     }
-}
-
-void calculGenerator(int tab[4][8])
-{
-
 }
