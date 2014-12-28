@@ -19,7 +19,7 @@ void askMatrix(int tab[4][4])
     int i, j;
 
     printf("\n\nEntrez votre matrice binaire:\n\n");
-    printf("(Entrez un 0 ou un 1.)\n\n");
+    printf("(Entrez un 0 ou un 1)\n\n");
 
     for(j=0; j<4; j++)
     {
@@ -56,13 +56,13 @@ int verifMatrixNull(int tab[4][4])
 
         if (cpt0 == 4)
         {
-            printf("Erreur!\n La matrice entree est incorrecte.\n\n");
+            printf("Erreur!\nLa matrice entree est incorrecte.\n\n");
             resultat = 0;
             return resultat;
         }
         else if (cpt1 < 2)
         {
-            printf("Erreur!\n La matrice entree est incorrecte.\n\n");
+            printf("Erreur!\nLa matrice entree est incorrecte.\n\n");
             resultat = 0;
             return resultat;
         }
@@ -101,7 +101,7 @@ int verifMatrixDuplicate(int tab[4][4])
     if (cpt1 == 4 || cpt2 == 4 || cpt3 == 4 || cpt4 == 4 || cpt5 == 4 || cpt6 == 4)
     {
         resultat = 0;
-        printf("Erreur!\n La matrice entree est incorrecte.\n\n");
+        printf("Erreur!\nLa matrice entree est incorrecte.\n\n");
     }
 
     return resultat;

@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     };
     int tabMatrixAn[4][4];
     int tabGenerator[4][8];
-    int aChoice;
+    int answer;
 
     //boucle au moins une fois sur la matrice entrée
     do
@@ -30,11 +30,16 @@ int main(int argc, char **argv)
     displayGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
 
     //choisir de coder ou décoder
-    choiceMatrix(&aChoice);
+    do
+    {
+        choiceMatrix(&answer);
+    }while(answer !=0 && answer != 1);
 
-    //calcul de la matrice génératrice
-    //printf("\n\nAffichage du calcul de la matrice generatrice:\n\n");
-    //calculGenerator(tabGenerator);
+    //calcul de la matrice generatrice
+    if (answer == 0)
+        calculInGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
+    else
+        calculOutGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
 
     //selection d'un fichier
     //printf("\n\nVeuillez choisir un fichier:\n\n");

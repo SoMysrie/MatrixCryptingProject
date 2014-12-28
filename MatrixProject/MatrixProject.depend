@@ -1,20 +1,26 @@
 # depslib dependency file v1.0
-1419762585 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\main.c
+1419764934 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\main.c
 	"header.h"
 
-1419676080 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\file.c
+1419764647 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\file.c
 	"header.h"
 
-1419676025 c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\header.h
+1419763704 c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\header.h
 	<stdlib.h>
 	<stdio.h>
 	"matrix.h"
+	"code.h"
 	"file.h"
 
-1419761159 c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\matrix.h
+1419763731 c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\matrix.h
 
 1419676185 c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\file.h
 
-1419677731 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\matrix.c
+1419764304 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\matrix.c
+	"header.h"
+
+1419764727 c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\code.h
+
+1419765088 source:c:\users\sophie\documents\github\matrixcryptingproject\matrixproject\code.c
 	"header.h"
 
