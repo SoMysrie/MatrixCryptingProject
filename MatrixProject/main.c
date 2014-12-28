@@ -12,7 +12,10 @@ int main(int argc, char **argv)
     int tabMatrixAn[4][4];
     int tabGenerator[4][8];
 
-    askMatrix(tabMatrixAn);
+    do
+    {
+        askMatrix(tabMatrixAn);
+    }while(verifMatrix(tabMatrixAn) == 0);
 
     //affichage de la matrice par défaut
     printf("\n\nAffichage de la matrice:\n\n");
@@ -25,6 +28,8 @@ int main(int argc, char **argv)
     //affiche la matrice génératrice
     printf("\n\nAffichage de la matrice generatrice:\n\n");
     displayGenerator(tabMatrixId, tabMatrixAn, tabGenerator);
+
+    system("PAUSE");
 
     return 0;
 }
