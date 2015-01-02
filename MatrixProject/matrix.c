@@ -29,7 +29,7 @@ void askMatrix(int tab[4][4])
             {
                 scanf("%d", &tab[i][j]);
                 if (tab[i][j] != 0 && tab[i][j] != 1)
-                    printf("nError! \n");
+                    printf("\nError! \n");
             }while(tab[i][j]!=0 && tab[i][j]!=1);
         }
         printf("\n");
@@ -130,5 +130,20 @@ void displayGenerator(int tab1[4][4], int tab2 [4][4], int tab3[4][8])
         for(j=0; j<8; j++)
             printf("%d ", tab3[i][j]);
         printf("\n");
+    }
+}
+
+void productMatrix(int tab1[4][4], int tab2[4][4], int tabfinal[4][8])
+{
+    int i, j, k;
+
+    for(i=0; i<4; i++)
+    {
+        for(j=0; j<8; j++)
+        {
+            tabfinal[i][j] = 0;
+            for(k=0; k<4; k++)
+                tabfinal[i][j] += tab1[i][k] * tab2[k][j];
+        }
     }
 }

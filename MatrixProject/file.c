@@ -66,3 +66,25 @@ long sizeFile()
 
     return taille;
 }
+/*
+int saveBits(long taille, FILE *fichier)
+{
+    int *tab = NULL;
+    int val;
+
+    tab = malloc(taille * sizeof(long));
+    if(tab == NULL)
+        exit(0);
+
+    while(val=fgetc(fichier)!=EOF)
+    {
+        fputc
+    }
+
+    fclose(fichier);
+
+    free(tab);
+
+    return 0;
+}
+*/
