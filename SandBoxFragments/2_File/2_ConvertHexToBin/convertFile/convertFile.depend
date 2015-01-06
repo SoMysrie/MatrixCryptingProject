@@ -12,3 +12,13 @@
 1420191858 source:c:\users\sophie\documents\github\matrixcryptingproject\sandboxfragments\2_file\2_convertfile\convertfile\main.c
 	"header.h"
 
+1420191873 source:c:\users\sophie\documents\github\matrixcryptingproject\sandboxfragments\2_file\2_converthextobin\convertfile\convert.c
+	"header.h"
+
+1420191916 c:\users\sophie\documents\github\matrixcryptingproject\sandboxfragments\2_file\2_converthextobin\convertfile\header.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	<conio.h>
+

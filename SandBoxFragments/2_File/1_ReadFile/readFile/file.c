@@ -20,72 +20,10 @@ void choiceAgain(int *choice)
     printf("\n\n");
 }
 
-long sizeFile()
+void octByOct(FILE *fichier)
 {
-    FILE* fichier = NULL;
-    long taille;
-    int answerFile;
+    unsigned char octetActuel = 0;
 
-    do
-    {
-        choiceFile(&answerFile);
-        switch (answerFile)
-        {
-            case 1:
-                fichier = fopen("test/testFile.txt", "rb");
-                break;
-            case 2:
-                fichier = fopen("test/testPic.jpg", "rb");
-                break;
-            case 3:
-                fichier = fopen("test/testMusic.mp3", "rb");
-                break;
-            case 4:
-                fichier = fopen("test/testVideo.mp4", "rb");
-                break;
-            default:
-                printf("\n\nError!\n\n");
-                break;
-        }
-
-        if (fichier != NULL)
-        {
-            fseek (fichier, 0, SEEK_END);
-            taille = ftell (fichier);
-            printf("\n\nSize : %d\n\n", taille);
-        }
-        else
-        {
-            printf("\n\nError! Cannot open the file.\n\n");
-            taille = 0;
-        }
-
-        fclose(fichier);
-
-    }while(answerFile<1 || answerFile>4  || taille == 0);
-
-    return taille;
+    while( fread(&octetActuel, 1, sizeof(octetActuel), fichier) != 0)
+        printf("%02x\n", octetActuel);
 }
-
-/*
-int saveBits(long taille, FILE *fichier)
-{
-    int *tab = NULL;
-    int val;
-
-    tab = malloc(taille * sizeof(long));
-    if(tab == NULL)
-        exit(0);
-
-    while(val=fgetc(fichier)!=EOF)
-    {
-        fputc
-    }
-
-    fclose(fichier);
-
-    free(tab);
-
-    return 0;
-}
-*/

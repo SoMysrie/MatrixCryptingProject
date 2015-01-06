@@ -8,7 +8,6 @@
 #include <conio.h>
 
 #include "matrix.h"
-#include "code.h"
 #include "file.h"
 
 #endif // HEADER

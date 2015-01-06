@@ -9,7 +9,6 @@
 
 void    choiceFile      (int *choice);
 void    choiceAgain     (int *choice);
-long    sizeFile        ();
-int     saveBits        (long taille);
+void    octByOct        (FILE *fichier);
 
 #endif // HEADER_H_INCLUDED

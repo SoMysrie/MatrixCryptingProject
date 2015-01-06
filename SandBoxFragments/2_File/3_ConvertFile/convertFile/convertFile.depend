@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1420538443 source:c:\users\sophie\documents\github\matrixcryptingproject\sandboxfragments\2_file\3_convertfile\convertfile\convertfile.c
+	"header.h"
+
+1420538313 c:\users\sophie\documents\github\matrixcryptingproject\sandboxfragments\2_file\3_convertfile\convertfile\header.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<math.h>
+	<conio.h>
+
+1420538343 source:c:\users\sophie\documents\github\matrixcryptingproject\sandboxfragments\2_file\3_convertfile\convertfile\main.c
+	"header.h"
+

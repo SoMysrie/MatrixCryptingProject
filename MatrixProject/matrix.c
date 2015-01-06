@@ -1,5 +1,14 @@
 #include "header.h"
 
+int choiceMatrix(int *choice)
+{
+    printf("\n\nPlease choose\n\n");
+    printf("1. Encode.\n");
+    printf("2. Decode.\n");
+    scanf("%d", choice);
+    printf("\n\n");
+}
+
 void displayMatrix(int tab[4][4])
 {
     int i, j;

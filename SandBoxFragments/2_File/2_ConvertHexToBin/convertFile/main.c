@@ -23,5 +23,4 @@ int main()
         printf("Binary number: %d",hex_binary(hex));
     }
     return 0;
-
 }

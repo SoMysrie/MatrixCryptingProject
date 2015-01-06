@@ -1,26 +1,64 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "header.h"
 
 int main()
 {
-    FILE *fichierSource = NULL;
+    FILE *fichier = NULL;
+    int answerFile;
+    int taille;
     unsigned char octetActuel = 0;
 
-    fichierSource = fopen("test/testFile.txt", "rb");
-
-    if(fichierSource == NULL)
+    do
     {
-        exit(1);
-    }
+        choiceFile(&answerFile);
+        switch (answerFile)
+        {
+            case 1:
+                fichier = fopen("test/testFile.txt", "rb");
+                while( fread(&octetActuel, 1, sizeof(octetActuel), fichier) != 0)
+                {
+                    printf("%02x\n", octetActuel);
+                }
+                break;
+            case 2:
+                fichier = fopen("test/testPic.jpg", "rb");
+                while( fread(&octetActuel, 1, sizeof(octetActuel), fichier) != 0)
+                {
+                    printf("%02x\n", octetActuel);
+                }
+                break;
+            case 3:
+                fichier = fopen("test/testMusic.mp3", "rb");
+                while( fread(&octetActuel, 1, sizeof(octetActuel), fichier) != 0)
+                {
+                    printf("%02x\n", octetActuel);
+                }
+                break;
+            case 4:
+                fichier = fopen("test/testVideo.mp4", "rb");
+                while( fread(&octetActuel, 1, sizeof(octetActuel), fichier) != 0)
+                {
+                    printf("%02x\n", octetActuel);
+                }
+                break;
+            default:
+                printf("\n\nError!\n\n");
+                break;
+        }
 
+        if (fichier != NULL)
+        {
+            fseek (fichier, 0, SEEK_END);
+            taille = ftell (fichier);
+            printf("\n\nSize : %d octets\n\n", taille);
+        }
+        else
+        {
+            printf("\n\nError! Cannot open the file.\n\n");
+            exit(1);
+        }
+    }while(answerFile<1 || answerFile>4  || taille == 0);
 
-    while( fread(&octetActuel, 1, sizeof(octetActuel), fichierSource) != 0)
-    {
-        printf("%02x\n", octetActuel);
-    }
-
-
-    fclose(fichierSource);
+    fclose(fichier);
 
     return 0;
 }
