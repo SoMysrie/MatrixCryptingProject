@@ -1,5 +1,5 @@
 
-int     choiceMatrix            (int *choice);
+void     choiceMatrix            (int *choice);
 void    displayMatrix           (int tab[4][4]);
 void    askMatrix               (int tab[4][4]);
 int     verifMatrixNull         (int tab[4][4]);

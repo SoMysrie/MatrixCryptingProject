@@ -1,6 +1,6 @@
 #include "header.h"
 
-int choiceMatrix(int *choice)
+void choiceMatrix(int *choice)
 {
     printf("\n\nPlease choose\n\n");
     printf("1. Encode.\n");
@@ -141,18 +141,19 @@ void displayGenerator(int tab1[4][4], int tab2 [4][4], int tab3[4][8])
         printf("\n");
     }
 }
-
-void productMatrix(int tab1[4][4], int tab2[4][4], int tabfinal[4][8])
+/*
+void productMatrix(int tab1, int tab2, int tabfinal, l, c)
 {
     int i, j, k;
 
-    for(i=0; i<4; i++)
+    for(i=0; i<l; i++)
     {
-        for(j=0; j<8; j++)
+        for(j=0; j<c; j++)
         {
             tabfinal[i][j] = 0;
-            for(k=0; k<4; k++)
+            for(k=0; k<l; k++)
                 tabfinal[i][j] += tab1[i][k] * tab2[k][j];
         }
     }
 }
+*/

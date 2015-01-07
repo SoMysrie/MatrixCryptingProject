@@ -1,4 +1,5 @@
 
 void    choiceFile      (int *choice);
 void    choiceAgain     (int *choice);
-void    calculBin       (int d);
+int     *calculBin      (char d);
+int     calculOct       (int *tab);
